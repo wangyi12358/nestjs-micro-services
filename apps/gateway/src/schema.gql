@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  username: String!
+  name: String!
+}
+
+type Login {
+  token: String!
+  user: User!
+}
+
+type UserPagination {
+  total: Float!
+  list: [User!]
+}
+
+type UserGrpcRes {
+  message: String!
+}
+
+type Query {
+  profile: User!
+  userPage(pagination: PaginationInput!): UserPagination!
+  userGrpc: UserGrpcRes!
+}
+
+input PaginationInput {
+  pageSize: Float!
+  current: Float!
+}
+
+type Mutation {
+  createUser(user: UserInput!): Boolean!
+  login(username: String!, password: String!): Login!
+}
+
+input UserInput {
+  username: String!
+  name: String!
+  password: String!
+}
