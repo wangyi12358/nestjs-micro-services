@@ -1,6 +1,6 @@
 import { getServiceClientConfig } from '@app/grpc';
-import { jwtConstants } from '@app/shared/common/constants';
-import { servicePorts } from '@app/shared/common/services';
+import { JWT } from '@app/shared/constants/jwt';
+import { SERVICE_PORTS, Services } from '@app/shared/constants/services';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -15,11 +15,10 @@ import {
 import { join } from 'path';
 import * as resolvers from './resolvers';
 
-console.log('__dirname==', __dirname, process.cwd());
 @Module({
   imports: [
     ClientsModule.register([
-      getServiceClientConfig('user', `localhost:${servicePorts.user}`),
+      getServiceClientConfig(Services.user, `localhost:${SERVICE_PORTS.USER}`),
     ]),
     // Accept-Language header resolver
     I18nModule.forRoot({
@@ -49,7 +48,7 @@ console.log('__dirname==', __dirname, process.cwd());
     }),
     JwtModule.register({
       global: true,
-      secret: jwtConstants.secret,
+      secret: JWT.SECRET,
       signOptions: { expiresIn: '2 days' },
     }),
   ],

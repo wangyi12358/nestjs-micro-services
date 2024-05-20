@@ -2,14 +2,34 @@ syntax = "proto3";
 
 package user;
 
-message UserReq {
+message CreateUserReq {
   string name = 1;
+  string username = 2;
+  string password = 3;
+  string createdId = 4;
+  string updatedId = 5;
 }
 
 message UserRes {
-  string message = 1;
+  string id = 1;
+  string name = 2;
+  string username = 3;
+  string password = 4;
+  string createdId = 5;
+  string updatedId = 6;
+  int64 createdAt = 7;
+  int64 updatedAt = 8;
+}
+
+message UserPageRes {
+  repeated UserRes list = 1;
+  int32 total = 2;
+}
+
+message UserPageReq  {
 }
 
 service UserService {
-  rpc GetExample (UserReq) returns (UserRes);
+  rpc UserPage (UserPageReq) returns (UserPageRes);
+  rpc CreateUser (CreateUserReq) returns (UserRes);
 }

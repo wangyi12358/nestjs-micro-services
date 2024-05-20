@@ -1,3 +1,4 @@
+import { JWT } from '@app/shared/constants/jwt';
 import {
   CanActivate,
   ExecutionContext,
@@ -6,7 +7,6 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
-import { jwtConstants } from '../../../../libs/shared/src/common/constants';
 
 @Injectable()
 export class ManagerGuard implements CanActivate {
@@ -24,7 +24,7 @@ export class ManagerGuard implements CanActivate {
     }
     try {
       const payload = await this.jwtService.verifyAsync(token, {
-        secret: jwtConstants.secret,
+        secret: JWT.SECRET,
       });
       // if (payload.role !== 2) {
       //   // 非管理员账户，无权限

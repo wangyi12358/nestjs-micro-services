@@ -3,16 +3,6 @@
   "collection": "@nestjs/schematics",
   "compilerOptions": {
     "deleteOutDir": true,
-    "assets": [
-      {
-      "include": "i18n/**/*",
-      "outDir": "./dist/apps/gateway/src"
-      },
-      {
-        "include": "../../../libs/grpc/proto/**/*.proto",
-        "outDir": "./dist/libs/grpc/proto"
-      }
-    ],
     "watchAssets": true
   },
   "monorepo": true,
@@ -23,6 +13,13 @@
       "entryFile": "main",
       "sourceRoot": "apps/gateway/src",
       "compilerOptions": {
+        "assets": [{
+          "include": "../../../libs/grpc/proto/**/*.proto",
+          "outDir": "./dist/libs/grpc/proto"
+        }, {
+          "include": "i18n/**/*",
+          "outDir": "./dist/apps/gateway/src"
+        }],
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
     },
@@ -32,6 +29,13 @@
       "entryFile": "main",
       "sourceRoot": "apps/user/src",
       "compilerOptions": {
+        "assets": [{
+          "include": "../../../libs/grpc/proto/**/*.proto",
+          "outDir": "./dist/libs/grpc/proto"
+        }, {
+          "include": "../prisma/client",
+          "outDir": "./dist/apps/user/prisma"
+        }],
         "tsConfigPath": "apps/user/tsconfig.app.json"
       }
     }

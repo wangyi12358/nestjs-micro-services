@@ -1,11 +1,17 @@
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
-import { UserRes } from 'libs/grpc/proto/user/user';
+import {
+  UserReq,
+  UserRes,
+  UserService,
+  UserServiceServiceName,
+} from 'libs/grpc/proto/user/user';
 
 @Controller()
-export class UserController {
-  @GrpcMethod('UserService', 'GetExample')
-  findMany(): UserRes {
+export class UserController implements UserService {
+  @GrpcMethod(UserServiceServiceName)
+  async GetExample(request: UserReq): Promise<UserRes> {
+    console.log('request', request);
     return { message: 'John' };
   }
 }

@@ -18,10 +18,11 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/grpc": ["libs/grpc/src", "libs/grpc/src"],
-      "@app/grpc/*": ["libs/grpc/src/*", "libs/grpc/src/*"],
+      "@app/grpc": ["libs/grpc/src"],
+      "@app/grpc/*": ["libs/grpc/src/*"],
       "@app/shared": ["libs/shared/src"],
-      "@app/shared/*": ["libs/shared/src/*"]
+      "@app/shared/*": ["libs/shared/src/*"],
+      "@user/prisma-client": ["apps/user/src/prisma-client"],
     }
   }
 }

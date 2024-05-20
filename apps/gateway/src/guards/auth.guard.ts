@@ -1,3 +1,4 @@
+import { JWT } from '@app/shared/constants/jwt';
 import {
   CanActivate,
   ExecutionContext,
@@ -8,7 +9,6 @@ import {
 import { GqlExecutionContext } from '@nestjs/graphql';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
-import { jwtConstants } from '../../../../libs/shared/src/common/constants';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     }
     try {
       const payload = await this.jwtService.verifyAsync(token, {
-        secret: jwtConstants.secret,
+        secret: JWT.SECRET,
       });
       // We're assigning the payload to the request object here
       // so that we can access it in our route handlers
