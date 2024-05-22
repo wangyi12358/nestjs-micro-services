@@ -29,12 +29,12 @@ make start SERVICE=user
 │  ├─ user // user service
 │  │  ├─ src // service code
 │  │  │  ├─ resolvers // GraphQL
-│  │  │  ├─ button.tsx // 组件实现，文件名与组件名称相同
-│  │  │  └─ index.ts // 组件导出，不推荐使用默认导出
+│  │  │  ├─ controllers // gRPC services
+│  │  │  └─ model // GraphQL models
 │  │  └─ prisma // service orm
 │  └─ libs
-│     ├─ grpc 
-│     └─ shared 
+│     ├─ grpc // proto files
+│     └─ shared // shard code
 ```
 
 ## Links
@@ -43,3 +43,8 @@ make start SERVICE=user
 - [gRPC](https://grpc.io/)
 - [GraphQL](https://graphql.org/)
 - [PostgreSQL](https://www.postgresql.org/)
+
+## todo-list
+1. Link Tracking
+2. timescaledb
+3. Service Discovery: etcd or Nacos
