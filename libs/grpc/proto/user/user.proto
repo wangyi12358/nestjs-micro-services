@@ -17,8 +17,6 @@ message UserRes {
   string password = 4;
   string createdId = 5;
   string updatedId = 6;
-  int64 createdAt = 7;
-  int64 updatedAt = 8;
 }
 
 message UserPageRes {
@@ -27,9 +25,17 @@ message UserPageRes {
 }
 
 message UserPageReq  {
+  int32 current = 1;
+  int32 pageSize = 2;
+}
+
+message LoginReq {
+  string username = 1;
+  string password = 2;
 }
 
 service UserService {
   rpc UserPage (UserPageReq) returns (UserPageRes);
   rpc CreateUser (CreateUserReq) returns (UserRes);
+  rpc Login (LoginReq) returns (UserRes);
 }

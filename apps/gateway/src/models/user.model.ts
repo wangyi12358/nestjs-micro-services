@@ -25,7 +25,7 @@ export class UserInput {
 @ObjectType()
 export class User {
   @Field(() => ID)
-  id: number;
+  id: string;
 
   @Field()
   username: string;

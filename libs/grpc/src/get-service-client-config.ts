@@ -2,11 +2,12 @@ import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
 export function getServiceClientConfig(
+  clientName: string,
   name: string,
   url: `${string}:${number}` = 'localhost:5000',
 ) {
   return {
-    name: `${name.toUpperCase()}_SERVICE`,
+    name: clientName,
     transport: Transport.GRPC,
     options: {
       package: name,

@@ -1,3 +1,4 @@
+import { IP } from '@app/shared/constants/services';
 import { INestMicroservice } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
@@ -12,7 +13,7 @@ export function createService(
     transport: Transport.GRPC,
     options: {
       package: name,
-      url: `localhost:${port}`,
+      url: `${IP}:${port}`,
       protoPath: join(__dirname, `../../grpc/proto/${name}/${name}.proto`),
     },
   });

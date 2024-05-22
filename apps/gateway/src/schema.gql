@@ -18,14 +18,9 @@ type UserPagination {
   list: [User!]
 }
 
-type UserGrpcRes {
-  message: String!
-}
-
 type Query {
   profile: User!
   userPage(pagination: PaginationInput!): UserPagination!
-  userGrpc: UserGrpcRes!
 }
 
 input PaginationInput {
