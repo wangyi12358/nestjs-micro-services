@@ -23,18 +23,18 @@ make start SERVICE=user
 ```
 
 ## Apps
-```json
+```text
 ├─ apps
-│  ├─ gateway // gateway service
-│  ├─ user // user service
-│  │  ├─ src // service code
-│  │  │  ├─ resolvers // GraphQL
-│  │  │  ├─ controllers // gRPC services
-│  │  │  └─ model // GraphQL models
-│  │  └─ prisma // service orm
+│  ├─ gateway # gateway service
+│  ├─ user # user service
+│  │  ├─ src # service code
+│  │  │  ├─ resolvers # graphql 
+│  │  │  ├─ controllers # gRPC services
+│  │  │  └─ model # graphql models
+│  │  └─ prisma # service orm
 │  └─ libs
-│     ├─ grpc // proto files
-│     └─ shared // shard code
+│     ├─ grpc # proto files
+│     └─ shared # shard code
 ```
 
 ## Links
