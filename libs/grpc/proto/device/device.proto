@@ -16,7 +16,6 @@ message DeviceRes {
   string username = 3;
   string password = 4;
   string createdId = 5;
-  user.UserRes user = 6;
   string updatedId = 7;
 }
 
