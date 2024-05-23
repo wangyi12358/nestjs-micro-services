@@ -36,11 +36,12 @@ export class UserController implements IUserService {
 
   @GrpcMethod(UserServiceName)
   async login(request: LoginReq) {
-    return await this.prismaService.user.findFirst({
+    const user = await this.prismaService.user.findFirst({
       where: {
         username: request.username,
         password: request.password,
       },
     });
+    return { user };
   }
 }

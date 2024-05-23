@@ -19,6 +19,10 @@ message UserRes {
   string updatedId = 6;
 }
 
+message LoginRes {
+  UserRes user = 1;
+}
+
 message UserPageRes {
   repeated UserRes list = 1;
   int32 total = 2;
@@ -37,5 +41,5 @@ message LoginReq {
 service UserService {
   rpc UserPage (UserPageReq) returns (UserPageRes);
   rpc CreateUser (CreateUserReq) returns (UserRes);
-  rpc Login (LoginReq) returns (UserRes);
+  rpc Login (LoginReq) returns (LoginRes);
 }

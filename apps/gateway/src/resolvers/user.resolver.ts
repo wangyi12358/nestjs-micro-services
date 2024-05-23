@@ -63,7 +63,7 @@ export class UserResolver implements OnModuleInit {
     @Args('password') password: string,
     @I18n() i18n: I18nContext,
   ) {
-    const user = await lastValueFrom(
+    const { user } = await lastValueFrom(
       this.userService.login({
         username,
         password: md5(password),

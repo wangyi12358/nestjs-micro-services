@@ -21,6 +21,10 @@ export interface UserRes {
   updatedId: string;
 }
 
+export interface LoginRes {
+  user: UserRes;
+}
+
 export interface UserPageRes {
   list: UserRes[];
   //  @int32
@@ -44,11 +48,11 @@ export const UserServiceName = 'UserService';
 export interface IUserService {
   userPage: (request: UserPageReq) => Promise<UserPageRes>;
   createUser: (request: CreateUserReq) => Promise<UserRes>;
-  login: (request: LoginReq) => Promise<UserRes>;
+  login: (request: LoginReq) => Promise<LoginRes>;
 }
 
 export interface IUserServiceClient {
   userPage: (request: UserPageReq) => Observable<UserPageRes>;
   createUser: (request: CreateUserReq) => Observable<UserRes>;
-  login: (request: LoginReq) => Observable<UserRes>;
+  login: (request: LoginReq) => Observable<LoginRes>;
 }

@@ -3,7 +3,6 @@
 // This is code generated automatically by the proto2ts, please do not modify
 
 import { Observable } from 'rxjs';
-import { UserRes } from '../user/user';
 
 export interface CreateDeviceReq {
   name: string;
@@ -19,7 +18,6 @@ export interface DeviceRes {
   username: string;
   password: string;
   createdId: string;
-  user: UserRes;
   updatedId: string;
 }
 
