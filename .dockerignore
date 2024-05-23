@@ -1,0 +1,12 @@
+
+# Other development files
+.git
+.gitignore
+.idea
+.vscode
+.DS_Store
+
+node_modules
+dist
+
+.next
