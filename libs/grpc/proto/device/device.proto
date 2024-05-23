@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package device;
+
+message CreateDeviceReq {
+  string name = 1;
+  string username = 2;
+  string password = 3;
+  string createdId = 4;
+  string updatedId = 5;
+}
+
+message DeviceRes {
+  string id = 1;
+  string name = 2;
+  string username = 3;
+  string password = 4;
+  string createdId = 5;
+  user.UserRes user = 6;
+  string updatedId = 7;
+}
+
+message DevicePageRes {
+  repeated DeviceRes list = 1;
+  int32 total = 2;
+}
+
+message DevicePageReq  {
+  int32 current = 1;
+  int32 pageSize = 2;
+}
+
+service DeviceService {
+  rpc DevicePage (DevicePageReq) returns (DevicePageRes);
+  rpc CreateDevice (CreateDeviceReq) returns (DeviceRes);
+}

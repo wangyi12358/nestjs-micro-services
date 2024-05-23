@@ -37,6 +37,22 @@
         }],
         "tsConfigPath": "apps/user/tsconfig.app.json"
       }
+    },
+    "device": {
+      "type": "application",
+      "root": "apps/device",
+      "entryFile": "main",
+      "sourceRoot": "apps/device/src",
+      "compilerOptions": {
+        "assets": [{
+          "include": "../../../libs/grpc/proto/**/*.proto",
+          "outDir": "./dist/libs/grpc/proto"
+        }, {
+          "include": "../prisma/client",
+          "outDir": "./dist/apps/device/prisma"
+        }],
+        "tsConfigPath": "apps/device/tsconfig.app.json"
+      }
     }
   }
 }

@@ -106,8 +106,8 @@ importers:
         specifier: ^5.0.0
         version: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)
       generate-type-cli:
-        specifier: ^1.0.4
-        version: 1.0.4(@types/node@20.12.12)(chokidar@3.6.0)(typescript@5.4.5)
+        specifier: ^1.0.5
+        version: 1.0.5(@types/node@20.12.12)(chokidar@3.6.0)(typescript@5.4.5)
       jest:
         specifier: ^29.5.0
         version: 29.7.0(@types/node@20.12.12)(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))
@@ -2890,8 +2890,8 @@ packages:
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
 
-  generate-type-cli@1.0.4:
-    resolution: {integrity: sha512-k+S4P51XxLe0qIylihm+Hp9UJf6vhWnuZs/IeNqDRVfhb/CpKkVOsPiMYmpz09DmqJs1YJHXUWFGXozwT9/ogA==}
+  generate-type-cli@1.0.5:
+    resolution: {integrity: sha512-Ki9xlFuleFC5au0sixUGV07Of1c+Avlp5Ihb/VlliyYqorBMZsU4ILM4YmATECailduoniN6PFu2QCHpoj6bDw==}
     engines: {node: '>=16', pnpm: '>=7'}
     hasBin: true
 
@@ -8904,7 +8904,7 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
-  generate-type-cli@1.0.4(@types/node@20.12.12)(chokidar@3.6.0)(typescript@5.4.5):
+  generate-type-cli@1.0.5(@types/node@20.12.12)(chokidar@3.6.0)(typescript@5.4.5):
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser': 5.62.0(eslint@8.57.0)(typescript@5.4.5)

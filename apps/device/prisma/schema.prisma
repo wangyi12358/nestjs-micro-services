@@ -6,14 +6,12 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:postgre@127.0.0.1:5432/user"
+  url      = "postgresql://postgres:postgre@127.0.0.1:5432/device"
 }
 
-model User {
+model Device {
   id        String   @id @default(uuid())
   name      String   @db.VarChar(255)
-  username  String   @unique @db.VarChar(255)
-  password  String   @db.VarChar(255)
   status    Int      @default(1)
   createdId String   @default("") @map("created_id")
   updatedId String   @default("") @map("updated_id")
